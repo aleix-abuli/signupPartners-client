@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import Form1 from "../../components/Forms/Form1";
 import Form2 from "../../components/Forms/Form2";
 import Form3 from "../../components/Forms/Form3";
@@ -8,6 +9,8 @@ import Form3 from "../../components/Forms/Form3";
 const server = process.env.REACT_APP_API_URL;
 
 export default function SignUpPage() {
+
+    const navigate = useNavigate();
 
     const [stage, setStage] = useState(1);
     const [checked, setChecked] = useState(false);
@@ -76,7 +79,7 @@ export default function SignUpPage() {
         if(checked) {
             axios
             .post(`${server}/auth/signup`, requestBody, { "Access-Control-Allow-Origin" : "https://aleix-partners-server.herokuapp.com" })
-            .then((newUser) => console.log('NEW USER: ', newUser.data))
+            .then((newUser) => navigate('/login'))
             .catch((err) => console.log(err));
         };
 
