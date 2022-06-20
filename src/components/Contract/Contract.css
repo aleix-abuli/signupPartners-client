@@ -1,0 +1,7 @@
+.contractDiv {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 1.5rem;
+    border-radius: 30px;
+}

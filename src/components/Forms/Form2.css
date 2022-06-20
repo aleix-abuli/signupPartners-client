@@ -1,0 +1,66 @@
+.proposalText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.proposalText>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 90%;
+}
+
+.proposalContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.proposalDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    border-radius: 30px;
+    min-width: 30%;
+    margin-bottom: 2rem;
+}
+
+.proposalHeader{
+    font-weight: 700;
+}
+
+.form2{
+    border: 2px solid #ffc845;
+    margin-top: 1rem;
+}
+
+.formTitle {
+    color: #ffc845;
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+.termsDiv {
+    margin-top: 1rem;
+}
+
+.termsDiv a {
+    color: #279989;
+    text-decoration: none;
+}
+
+.termsDiv a:visited {
+    color: #279989;
+    text-decoration: none;
+}
+
+.btnSignupDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}

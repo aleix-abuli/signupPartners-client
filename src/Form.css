@@ -1,0 +1,87 @@
+.formContainer {
+    display:flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+.formContainer h2 {
+    text-align: center;
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formClass {
+    width: 90%;
+    padding: 3rem 1rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f3f3;
+}
+
+.formClass sup {
+    color: #279989;
+}
+
+.formClass label {
+    width: 90%;
+}
+
+.formClass input {
+    background-color: #f3f3f3;
+    width: 90%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.formClass input:focus {
+    outline: none;
+}
+
+.formClass select {
+    background-color: #f3f3f3;
+    width: 90%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: 0;
+    border-bottom:2px solid rgba(0, 0, 0, 0.1);
+}
+
+.formClass select:focus {
+    outline: none;
+}
+
+.formClass button {
+    font-size: 1.2rem;
+    width: 8rem;
+}
+
+.formBtn {
+    font-size: 1.2rem;
+    width: 8rem;
+    margin-top: 1.5rem;
+}
+
+.fullHeight {
+    min-height: 80vh;
+}
+
+.formBack>h1 {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.formBack>h3{
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+.formBack p {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}

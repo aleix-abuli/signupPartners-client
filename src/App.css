@@ -1,0 +1,75 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+#root {
+    min-height: 100vh;
+    background-color: #f3f3f3;
+}
+
+h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+}
+
+.linkBtn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btnBtn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 0;
+} 
+
+.tiger {
+    color: #ffc845;
+}
+
+.tigerBack {
+    background-color: #ffc845;
+}
+
+.green {
+    color: #279989;
+}
+
+.greenBack {
+    background-color: #279989;
+}
+
+.white {
+    color: #f3f3f3;
+}
+
+.whiteBack {
+    background-color: #f3f3f3;
+}
+
+.black {
+    color: #282828;
+}
+
+.blackBack {
+    background-color: #282828;
+}

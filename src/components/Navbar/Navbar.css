@@ -1,0 +1,30 @@
+nav {
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.navLogo {
+    height: 2rem;
+    padding: 1rem;
+}
+
+.navLink {
+    text-decoration: none;
+}
+
+.navDiv {
+    display: flex;
+    width: 8.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navBtn {
+    padding: 0.5rem;
+    border-radius: 10px;
+    bordeR: 0;
+    font-weight: 700;
+}
