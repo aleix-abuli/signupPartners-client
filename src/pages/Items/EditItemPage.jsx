@@ -60,6 +60,8 @@ export default function NewItemPage() {
         e.preventDefault();
         setLoadingImage(true);
 
+        const storedToken = localStorage.getItem('authToken');
+
         const uploadData = new FormData();
         uploadData.append('imageData', e.target.files[0]);
 

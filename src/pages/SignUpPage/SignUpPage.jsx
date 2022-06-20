@@ -73,6 +73,8 @@ export default function SignUpPage() {
        
         e.preventDefault();
 
+        const storedToken = localStorage.getItem('authToken');
+
         if(checked) {
             axios
             .post(`${server}/auth/signup`, requestBody, {

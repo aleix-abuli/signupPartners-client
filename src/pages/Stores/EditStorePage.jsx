@@ -59,6 +59,8 @@ export default function EditStorePage() {
         e.preventDefault();
         setLoadingImage(true);
 
+        const storedToken = localStorage.getItem('authToken');
+
         const uploadData = new FormData();
         uploadData.append('imageData', e.target.files[0]);
 

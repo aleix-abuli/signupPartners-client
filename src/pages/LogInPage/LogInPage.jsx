@@ -31,6 +31,8 @@ export default function LogInPage() {
 
         e.preventDefault();
 
+        const storedToken = localStorage.getItem('authToken');
+
         axios
         .post(`${server}/auth/login`, logInData, {
             headers: { Authorization: `Bearer ${storedToken}` },
