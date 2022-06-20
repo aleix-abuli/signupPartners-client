@@ -75,7 +75,7 @@ export default function SignUpPage() {
 
         if(checked) {
             axios
-            .post(`${server}/auth/signup`, requestBody)
+            .post(`${server}/auth/signup`, requestBody, { "Access-Control-Allow-Origin" : "https://aleix-partners-server.herokuapp.com" })
             .then((newUser) => console.log('NEW USER: ', newUser.data))
             .catch((err) => console.log(err));
         };
