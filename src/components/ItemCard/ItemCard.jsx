@@ -17,7 +17,10 @@ export default function ItemCard(props) {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .delete(`${server}/items/${item._id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+        .delete(`${server}/items/${item._id}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then((__) => navigate(`/stores/${storeId}`))
         .catch((err) => console.log(err));
 

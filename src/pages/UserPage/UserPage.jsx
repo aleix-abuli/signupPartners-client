@@ -19,7 +19,10 @@ export default function UserPage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .get(`${server}/partners/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+        .get(`${server}/partners/${id}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => {
             setPartner(data);
             if (data.locals.length > 0) setLocals(true);
