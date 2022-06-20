@@ -34,7 +34,7 @@ export default function StoreDetailsPage() {
         })
         .catch((err) => console.log(err));
 
-    }, [store.items]);
+    }, []);
 
     function deleteStore(e) {
 
