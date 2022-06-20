@@ -32,7 +32,7 @@ export default function LogInPage() {
         e.preventDefault();
 
         axios
-        .post(`${server}/auth/login`, logInData,{"Access-Control-Allow-Origin": '*'})
+        .post(`${server}/auth/login`, logInData,{"Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'})
         .then(({ data }) => {
             console.log(data.authToken);
             storeToken(data.authToken);
