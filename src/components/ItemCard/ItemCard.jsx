@@ -18,8 +18,7 @@ export default function ItemCard(props) {
 
         axios
         .delete(`${server}/items/${item._id}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then((__) => navigate(`/stores/${storeId}`))
         .catch((err) => console.log(err));

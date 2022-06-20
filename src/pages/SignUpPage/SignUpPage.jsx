@@ -73,11 +73,9 @@ export default function SignUpPage() {
        
         e.preventDefault();
 
-        const storedToken = localStorage.getItem('authToken');
-
         if(checked) {
             axios
-            .post(`${server}/auth/signup`, requestBody, { "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com' })
+            .post(`${server}/auth/signup`, requestBody)
             .then((newUser) => console.log('NEW USER: ', newUser.data))
             .catch((err) => console.log(err));
         };

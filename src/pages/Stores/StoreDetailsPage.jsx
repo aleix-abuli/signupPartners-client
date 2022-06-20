@@ -26,8 +26,7 @@ export default function StoreDetailsPage() {
 
         axios
         .get(`${server}/stores/${storeId}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => {
             setStore(data);
@@ -45,8 +44,7 @@ export default function StoreDetailsPage() {
 
         axios
         .delete(`${server}/stores/${storeId}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(() => console.log('deleted'))
         .catch((err) => console.log(err));

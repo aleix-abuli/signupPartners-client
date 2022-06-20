@@ -31,13 +31,8 @@ export default function LogInPage() {
 
         e.preventDefault();
 
-        const storedToken = localStorage.getItem('authToken');
-
         axios
-        .post(`${server}/auth/login`, logInData, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
-        })
+        .post(`${server}/auth/login`, logInData)
         .then(({ data }) => {
             console.log(data.authToken);
             storeToken(data.authToken);

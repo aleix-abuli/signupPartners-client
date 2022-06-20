@@ -25,8 +25,7 @@ function AuthProviderWrapper(props) {
         if(storedToken){
             axios
             .get(`${server}/auth/verify`, {
-                headers: { Authorization: `Bearer ${storedToken}` },
-                "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+                headers: { Authorization: `Bearer ${storedToken}` }
             })
             .then(({ data }) => {
                 const user = data;

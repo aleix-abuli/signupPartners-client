@@ -22,8 +22,7 @@ export default function EditStorePage() {
 
         axios
         .get(`${server}/stores/${storeId}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => {
             setStoreData(data);
@@ -46,8 +45,7 @@ export default function EditStorePage() {
 
         axios
         .post(`${server}/stores/${storeId}`, storeData, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => navigate(`/stores/${data._id}`))
         .catch((err) => console.log(err))
@@ -66,8 +64,7 @@ export default function EditStorePage() {
 
         axios
         .post(`${server}/upload`, uploadData, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => {
             setLoadingImage(false)

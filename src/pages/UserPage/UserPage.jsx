@@ -20,8 +20,7 @@ export default function UserPage() {
 
         axios
         .get(`${server}/partners/${id}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => {
             setPartner(data);

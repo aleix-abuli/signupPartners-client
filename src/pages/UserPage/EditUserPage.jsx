@@ -21,8 +21,7 @@ export default function EditUserPage() {
 
         axios
         .get(`${server}/partners/${id}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => {
             setPartnerData(data);
@@ -45,8 +44,7 @@ export default function EditUserPage() {
 
         axios
         .post(`${server}/partners/${id}/edit`, partnerData, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => navigate(`/partners/${data._id}`))
         .catch((err) => console.log(err))

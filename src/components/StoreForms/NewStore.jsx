@@ -30,8 +30,7 @@ export default function NewStore() {
 
         axios
         .post(`${server}/stores`, newStoreData, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => navigate(`/partners/${data._id}`))
         .catch((err) => console.log(err));
@@ -51,8 +50,7 @@ export default function NewStore() {
 
         axios
         .post(`${server}/upload`, uploadData, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+            headers: { Authorization: `Bearer ${storedToken}` }
         })
         .then(({ data }) => {
             setLoadingImage(false)
