@@ -30,7 +30,10 @@ export default function NewItem() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .post(`${server}/stores/${storeId}/items/new`, newItemData,  { headers: { Authorization: `Bearer ${storedToken}` } })
+        .post(`${server}/stores/${storeId}/items/new`, newItemData, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => navigate(`/stores/${data._id}`))
         .catch((err) => console.log(err));
 
@@ -46,7 +49,9 @@ export default function NewItem() {
         uploadData.append('imageData', e.target.files[0]);
 
         axios
-        .post(`${server}/upload`, uploadData)
+        .post(`${server}/upload`, uploadData, {
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => {
             setLoadingImage(false)
             setNewItemData({ ...newItemData, imageUrl: data.cloudinary_url })

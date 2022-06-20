@@ -1,7 +1,3 @@
-import axios from "axios";
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-
 export default function EditItem(props) {
 
     const { itemData, loadingImage, handleInputChange, handleSubmit, handleImageUpload } = props;

@@ -21,7 +21,10 @@ export default function EditStorePage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .get(`${server}/stores/${storeId}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+        .get(`${server}/stores/${storeId}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => {
             setStoreData(data);
         })
@@ -42,7 +45,10 @@ export default function EditStorePage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .post(`${server}/stores/${storeId}`, storeData, { headers: { Authorization: `Bearer ${storedToken}` } })
+        .post(`${server}/stores/${storeId}`, storeData, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => navigate(`/stores/${data._id}`))
         .catch((err) => console.log(err))
 
@@ -57,7 +63,10 @@ export default function EditStorePage() {
         uploadData.append('imageData', e.target.files[0]);
 
         axios
-        .post(`${server}/upload`, uploadData)
+        .post(`${server}/upload`, uploadData, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => {
             setLoadingImage(false)
             setStoreData({ ...storeData, imageUrl: data.cloudinary_url })

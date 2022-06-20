@@ -20,7 +20,10 @@ export default function EditUserPage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .get(`${server}/partners/${id}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+        .get(`${server}/partners/${id}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => {
             setPartnerData(data);
         })
@@ -41,7 +44,10 @@ export default function EditUserPage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .post(`${server}/partners/${id}/edit`, partnerData, { headers: { Authorization: `Bearer ${storedToken}` } })
+        .post(`${server}/partners/${id}/edit`, partnerData, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => navigate(`/partners/${data._id}`))
         .catch((err) => console.log(err))
 

@@ -24,7 +24,10 @@ export default function NewItemPage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .get(`${server}/items/${itemId}`, { headers: { Authorization: `Bearer ${storedToken}` } })
+        .get(`${server}/items/${itemId}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => setItemData(data))
         .catch((err) => console.log(err));
 
@@ -43,7 +46,10 @@ export default function NewItemPage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .post(`${server}/items/${itemId}`, itemData,  { headers: { Authorization: `Bearer ${storedToken}` } })
+        .post(`${server}/items/${itemId}`, itemData, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then((__) => navigate(`/partners/${user._id}`))
         .catch((err) => console.log(err));
 
@@ -58,7 +64,10 @@ export default function NewItemPage() {
         uploadData.append('imageData', e.target.files[0]);
 
         axios
-        .post(`${server}/upload`, uploadData)
+        .post(`${server}/upload`, uploadData, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+            "Access-Control-Allow-Origin": 'https://aleix-partners-server.herokuapp.com'
+        })
         .then(({ data }) => {
             setLoadingImage(false)
             setItemData({ ...itemData, imageUrl: data.cloudinary_url })

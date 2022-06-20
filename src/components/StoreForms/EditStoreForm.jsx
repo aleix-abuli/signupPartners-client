@@ -1,9 +1,3 @@
-import axios from "axios";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-const server = process.env.REACT_APP_API_URL;
-
 export default function EditStoreForm(props) {
 
     const { store, loadingImage, handleInputChange, handleSubmit, handleImageUpload } = props;
