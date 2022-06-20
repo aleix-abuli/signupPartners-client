@@ -20,7 +20,7 @@ export default function EditUserPage() {
         const storedToken = localStorage.getItem('authToken');
 
         axios
-        .get(`${server}/partners/${id}`, )
+        .get(`${server}/partners/${id}`, { headers: { Authorization: `Bearer ${storedToken}` }})
         .then(({ data }) => {
             setPartnerData(data);
         })
