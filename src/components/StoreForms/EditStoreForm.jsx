@@ -16,7 +16,7 @@ export default function EditStoreForm(props) {
                 <input name='imageUrl' type='file' onChange={handleImageUpload} />
                 <img src={imageUrl} style={{ 'height' : '100px' }} />
 
-                {loadingImage ? <p>Please wait, image loading...</p> : <button type="submit"  className="formBtn btnBtn white greenBack" >Update</button>}
+                {loadingImage ? <p>Please wait, image loading...</p> : <button type="submit"  className="formBtn btnBtn white greenBack" >Edit store</button>}
             </form>
         </>
     );

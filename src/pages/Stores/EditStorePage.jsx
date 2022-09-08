@@ -76,7 +76,7 @@ export default function EditStorePage() {
     return(
         <>
             <div className='formContainer tigerBack' style={{'min-height': '80vh'}} >
-                <h2>Edit profile</h2>
+                <h2>Edit store details</h2>
                 { storeData ? 
                 <EditStoreForm store={storeData} loadingImage={loadingImage} handleInputChange={handleInputChange} handleSubmit={handleSubmit} handleImageUpload={handleImageUpload} />
                 :

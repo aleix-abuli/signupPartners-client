@@ -6,7 +6,7 @@ export default function StoreCard(props) {
     const { store } = props;
 
     return(
-        <div className='whiteBack containerSotreCard'>
+        <div className='whiteBack containerStoreCard'>
             <Link to={`/stores/${store._id}`}>
                 <h4 className='black'>{store.name}</h4>
                 <p className='black'>{store.address}</p>

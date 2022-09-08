@@ -57,16 +57,14 @@ export default function StoreDetailsPage() {
             <>
                 <img src={store.imageUrl} className='coverImage'/>
                 <section className='basicStoreInfo'>
-                    <div>
                         <h2 className='black'>{store.name}</h2>
                         <p className='black'>📍 {store.address}</p>
                         <div className='profileLinksDiv'>
                             <Link to={`/stores/${storeId}/edit`} className='greenBack white'>Edit</Link>
                             <button onClick={deleteStore} className='whiteBack black'>Delete</button>
                         </div>
-                    </div>
                 </section>
-                <section className='sotreItems tigerBack'>
+                <section className='storeItems tigerBack'>
                     <h3 className='black'>{store.name}'s Items</h3>
                     {items ? 
                     <div className='itemsList'>

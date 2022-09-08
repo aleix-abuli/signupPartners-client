@@ -65,7 +65,7 @@ export default function UserPage() {
                 }
             </>
             :
-            <>No partner from db</>
+            <>Loading...</>
             }
         </>
     );
