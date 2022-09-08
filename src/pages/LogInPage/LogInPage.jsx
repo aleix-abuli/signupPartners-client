@@ -48,8 +48,11 @@ export default function LogInPage() {
     }, [user]);
 
     return(
-        <div className='formContainer tigerBack fullHeight'>
-            <LogInForm data={logInData} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
+        <div className='tigerBack formBack'>
+            <h1>Log in</h1>
+            <div className='formContainer tigerBack'>
+                <LogInForm data={logInData} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
+            </div>
         </div>
     );
 };

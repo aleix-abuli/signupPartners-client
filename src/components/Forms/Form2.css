@@ -64,3 +64,14 @@
     width: 100%;
     justify-content: space-between;
 }
+
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    
+}
+
+@media only screen and (min-width: 992px) {
+    .btnSignupDiv {
+        margin-bottom: 5vh;
+        width: 50%;
+    }
+}
