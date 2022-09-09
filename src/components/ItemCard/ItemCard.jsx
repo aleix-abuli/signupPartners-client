@@ -9,18 +9,20 @@ export default function ItemCard(props) {
 
     const navigate = useNavigate();
     
-    const { item, storeId } = props;
+    const { item, storeId, reset } = props;
 
     function deleteItem(e) {
 
         e.preventDefault();
         const storedToken = localStorage.getItem('authToken');
 
+        console.log('what the fuck 2');
+
         axios
         .delete(`${server}/items/${item._id}`, {
             headers: { Authorization: `Bearer ${storedToken}` }
         })
-        .then((__) => navigate(`/stores/${storeId}`))
+        .then(() => reset(item._id))
         .catch((err) => console.log(err));
 
     };

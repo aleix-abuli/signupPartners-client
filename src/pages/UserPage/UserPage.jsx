@@ -37,7 +37,7 @@ export default function UserPage() {
                 <section className='userHeader'>
                     <h1 className='black'>Hello, {partner.businessName}</h1>
                     <h3 className='black'>Welcome to Glovo Partners.</h3>
-                    <Link to={`/partners/${id}/edit`} className='linkBtn greenBack white' style={{'margin-top' : '3rem'}}>Edit profile</Link>
+                    <Link to={`/partners/${id}/edit`} className='linkBtn greenBack white' style={{marginTop : '3rem'}}>Edit profile</Link>
                 </section>
                 { locals ?
                 <section className='localsSection'>

@@ -40,15 +40,19 @@ export default function StoreDetailsPage() {
 
         e.preventDefault();
         const storedToken = localStorage.getItem('authToken');
-        navigate(`/partners/${user._id}`);
 
         axios
         .delete(`${server}/stores/${storeId}`, {
             headers: { Authorization: `Bearer ${storedToken}` }
         })
-        .then(() => console.log('deleted'))
+        .then(() => navigate(`/partners/${user._id}`))
         .catch((err) => console.log(err));
 
+    };
+
+    function reset(id) {
+        setStore({...store, items: store.items.filter(el => el._id !== id)});
+        if(store.items.length <= 0) setItems(false); 
     };
 
     return(
@@ -70,7 +74,7 @@ export default function StoreDetailsPage() {
                     <div className='itemsList'>
                         {store.items.map((item) => (
                             <>
-                                <ItemCard key={item._id} item={item} storeId={storeId} />
+                                <ItemCard key={item._id} item={item} storeId={storeId} reset={reset} />
                             </>
                         ))}
                         <Link to={`/stores/${storeId}/items/new`} className='linkItemCard whiteBack'>
