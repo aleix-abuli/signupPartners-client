@@ -14,6 +14,7 @@ export default function SignUpPage() {
 
     const [stage, setStage] = useState(1);
     const [checked, setChecked] = useState(false);
+    const [errorMsg, setErrorMsg] = useState(null);
     
     const [requestBody, setRequestBody] = useState({
         partner: null,
@@ -81,7 +82,9 @@ export default function SignUpPage() {
             .post(`${server}/auth/signup`, requestBody, { "Access-Control-Allow-Origin" : "https://aleix-partners-server.herokuapp.com" })
             .then((newUser) => navigate('/login'))
             .catch((err) => console.log(err));
-        };
+        } else {
+            setErrorMsg('You need to agree to the terms and conditions.');
+        }
 
     };
 
@@ -100,7 +103,7 @@ export default function SignUpPage() {
             switch(stage) {
                 case 1: return <Form1 signupData={signupData} nextStage={nextStage} previousStage={previousStage} handleInputChangeData={handleInputChangeData} />;
                 case 2: return <Form2 signupData={signupData} nextStage={nextStage} previousStage={previousStage} handleInputChangeBanking={handleInputChangeBanking} bankingDetails={bankingDetails} />;
-                case 3: return <Form3 signupData={signupData} nextStage={nextStage} previousStage={previousStage} handleSubmit={handleSubmit} checkTerms={checkTerms} />;
+                case 3: return <Form3 signupData={signupData} nextStage={nextStage} previousStage={previousStage} handleSubmit={handleSubmit} checkTerms={checkTerms} errorMsg={errorMsg} />;
             }
         })()}
         </div>
